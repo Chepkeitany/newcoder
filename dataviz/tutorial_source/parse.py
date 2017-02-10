@@ -23,7 +23,7 @@ def parse(raw_file, delimiter):
 
     # Open CSV file, and safely close it when we're done
     opened_file = open(raw_file)
-    
+
     # Read the CSV data
     csv_data = csv.reader(opened_file, delimiter=delimiter)
 

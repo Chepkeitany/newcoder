@@ -45,6 +45,7 @@ def parse(raw_file, delimiter):
 
 def visualize_days():
     """Visualize data by day of week"""
+    # Grab our parsed data by calling the parse function
     data_file = parse(MY_FILE, ",")
     # Returns a dict where it sums the total values for each key.
     # In this case, the keys are the DaysOfWeek, and the values are
@@ -52,15 +53,13 @@ def visualize_days():
     counter = Counter(item["DayOfWeek"] for item in data_file)
 
     # Separate out the counter to order it correctly when plotting.
-    data_list = [
-                  counter["Monday"],
-                  counter["Tuesday"],
-                  counter["Wednesday"],
-                  counter["Thursday"],
-                  counter["Friday"],
-                  counter["Saturday"],
-                  counter["Sunday"]
-                ]
+    data_list = [counter["Monday"],
+                 counter["Tuesday"],
+                 counter["Wednesday"],
+                 counter["Thursday"],
+                 counter["Friday"],
+                 counter["Saturday"],
+                 counter["Sunday"]]
     day_tuple = tuple(["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"])
 
     # Assign the data to a plot
